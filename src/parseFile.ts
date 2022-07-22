@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-import { parse, convertToIcomoonFormat } from "svgps";
+import { parse } from "svgps";
 
 import { Template } from "./types";
 
@@ -9,12 +9,8 @@ export function parseFile(
   outputPath: string,
   template?: Template
 ) {
-  const isIcomoon = template === "icomoon";
   const content = readFileSync(inputPath, "utf8");
-  const iconData = JSON.stringify(parse(content), null, 2);
+  const iconData = parse(content, { template });
 
-  writeFileSync(
-    outputPath,
-    isIcomoon ? convertToIcomoonFormat(iconData) : iconData
-  );
+  writeFileSync(outputPath, JSON.stringify(iconData, null, 2));
 }
