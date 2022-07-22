@@ -1,0 +1,34 @@
+{
+  "name": "svgps-cli",
+  "version": "0.1.0",
+  "description": "SVG Parser CLI",
+  "main": "index.js",
+  "bin": {
+    "svgps": "build/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aykutkardas/svgps-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aykutkardas/svgps-cli/issues"
+  },
+  "homepage": "https://github.com/aykutkardas/svgps-cli#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.6",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "commander": "^9.4.0",
+    "recursive-readdir": "^2.2.2",
+    "slugify": "^1.6.5",
+    "svgps": "^0.4.1"
+  }
+}
