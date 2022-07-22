@@ -1,5 +1,8 @@
 # svgps-cli
 
+[![npm](https://img.shields.io/npm/v/svgps-cli?color=%234fc921)](https://www.npmjs.com/package/svgps-cli)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
+
 **SVGPS** converts your icons into a single JSON file that is ready to use in your frontend or mobile projects. This project is the CLI version of the [svgps](https://github.com/aykutkardas/svgps) package.
 
 You can also use it online: [svgps.app](https://github.com/aykutkardas/svgps.app)
