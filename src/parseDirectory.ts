@@ -33,7 +33,7 @@ export async function parseDirectory(
 
   const iconsData = isIcomoon
     ? {
-        generatorSource: "svgps.app",
+        generatorSource: "svgps-cli",
         IcoMoonType: "selection",
         icons,
       }
