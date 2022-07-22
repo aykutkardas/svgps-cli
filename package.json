@@ -29,6 +29,6 @@
     "commander": "^9.4.0",
     "recursive-readdir": "^2.2.2",
     "slugify": "^1.6.5",
-    "svgps": "^0.4.1"
+    "svgps": "^0.5.1"
   }
 }

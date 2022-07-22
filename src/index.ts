@@ -8,6 +8,7 @@ import { parseDirectory } from "./parseDirectory";
 async function main() {
   program
     .option("--file", "Parse single file")
+    .option("--template <template>", "Parse single file")
     .argument("<input>", "input directory or file path")
     .argument("<output>", "output directory or file path");
 
@@ -24,9 +25,9 @@ async function main() {
   if (!fs.existsSync(outputPath)) throw "Output path does not exist!";
 
   if (options.file) {
-    parseFile(input, output);
+    parseFile(input, output, options.template);
   } else {
-    parseDirectory(input, output);
+    parseDirectory(input, output, options.template);
   }
 }
 

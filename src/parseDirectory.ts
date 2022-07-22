@@ -1,10 +1,19 @@
 import { readFileSync, writeFileSync } from "fs";
 
-import { parse } from "svgps";
+import { convertToIcomoonFormat, parse } from "svgps";
 import * as recursiveReaddir from "recursive-readdir";
+
 import toSlug from "./utils/toSlug";
 
-export async function parseDirectory(inputPath: string, outputPath: string) {
+import { Template } from "./types";
+
+export async function parseDirectory(
+  inputPath: string,
+  outputPath: string,
+  template?: Template
+) {
+  const isIcomoon = template === "icomoon";
+
   const inputDirContents = await recursiveReaddir(inputPath);
   const svgFiles = inputDirContents.filter((filepath) =>
     filepath.endsWith(".svg")
@@ -19,8 +28,16 @@ export async function parseDirectory(inputPath: string, outputPath: string) {
 
     iconData.properties = { name: toSlug(fileName) };
 
-    icons.push(iconData);
+    icons.push(isIcomoon ? convertToIcomoonFormat(iconData) : iconData);
   }
 
-  writeFileSync(outputPath, JSON.stringify(icons, null, 2));
+  const iconsData = isIcomoon
+    ? {
+        generatorSource: "svgps.app",
+        IcoMoonType: "selection",
+        icons,
+      }
+    : icons;
+
+  writeFileSync(outputPath, JSON.stringify(iconsData, null, 2));
 }
