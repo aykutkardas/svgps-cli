@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
 
-import { convertToIcomoonFormat, parse } from "svgps";
+import parse, { IcomoonIcon } from "svgps";
 import * as recursiveReaddir from "recursive-readdir";
 
 import toSlug from "./utils/toSlug";
@@ -24,11 +24,13 @@ export async function parseDirectory(
   for (const filepath of svgFiles) {
     const fileName = filepath.split("/").pop();
     const content = readFileSync(filepath, "utf8");
-    const iconData = parse(content);
+    const iconData = parse(content, { template });
 
-    iconData.properties = { name: toSlug(fileName) };
+    if (isIcomoon) {
+      (<IcomoonIcon>iconData).properties = { name: toSlug(fileName) };
+    }
 
-    icons.push(isIcomoon ? convertToIcomoonFormat(iconData) : iconData);
+    icons.push(iconData);
   }
 
   const iconsData = isIcomoon
