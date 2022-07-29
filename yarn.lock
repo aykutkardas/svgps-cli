@@ -210,10 +210,10 @@ svgpath@^2.5.0:
   resolved "https://registry.yarnpkg.com/svgpath/-/svgpath-2.5.0.tgz#d57434641d9aa9abae02a4038ebf281fa3005b10"
   integrity sha512-o/vohwqjUO9nDAh4rcjE3KaW/v//At8UJu2LJMybXidf5QLQLVA4bxH0//4YCsr+1H4Gw1Wi/Jc62ynzSBYidw==
 
-svgps@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/svgps/-/svgps-0.7.0.tgz#69993dd06a4b92e6f937ae61f85ac6ea411c7d87"
-  integrity sha512-XDc1MbpoQJpdyvnl9XkdLZ592bcg0PpkT3s50HdNOMH0Ce6vBs2YCeTCzDi2uOHX9rwy2GzYzJJu7E8L0Z4EnQ==
+svgps@^0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/svgps/-/svgps-0.7.1.tgz#25dbfba756a4a7a57f3c4ea6a50315ea652b380b"
+  integrity sha512-vTXQOEzRnpSruMGYrsYEHaCz2rWmpsKk0TQ0ScssivuFO9xgBGw7O88Lxfp1UtyzwyjruONJjINC/ygylJ5DNw==
   dependencies:
     lodash.uniq "^4.5.0"
     muninn "^0.12.4"
