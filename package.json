@@ -1,6 +1,6 @@
 {
   "name": "svgps-cli",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "SVG Parser CLI",
   "main": "index.js",
   "bin": {
